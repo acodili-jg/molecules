@@ -20,11 +20,11 @@ The Java application that COULD fry your computer!
  - `Ctrl` `Alt` `LMB` - adds multiple nonmoving molecules without overlapping others (Supports drag
     press)
 
- - `RMB` - moves the world view
+ - `RMB` - moves the world view (Drag press)
 
  - `M` - toggles accelerate molecules mode
 
- - `Alt` `M` - make selected molecules lose current their velocity
+ - `Alt` `M` - make selected molecules lose their current velocity
 
  - `Delete` - deletes the selected molecules
 
@@ -32,7 +32,7 @@ The Java application that COULD fry your computer!
 
  - Yellow Outline - those molecules are selected
 
- - Magenta Outline - accelrate molecules mode was enabled
+ - Magenta Outline - accelerate molecules mode was enabled
 
  - Red Line - the velocity of molecules
 
