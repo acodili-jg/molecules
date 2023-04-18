@@ -1,3 +1,7 @@
 plugins {
     id 'application'
 }
+
+application {
+    mainClass = 'io.github.jgacodili.molecules.client.main.Main'
+}
