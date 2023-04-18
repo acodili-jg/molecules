@@ -1,0 +1,51 @@
+sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs = [ 'src/' ]
+sourceSets.main.resources.srcDirs = [ '../assets' ]
+
+project.ext.mainClassName = 'io.github.jgacodili.molecules.DesktopLauncher'
+project.ext.assetsDir = new File('../assets')
+
+import static org.gradle.internal.os.OperatingSystem.MAC_OS
+
+import org.gradle.internal.os.OperatingSystem
+
+tasks.register('run', JavaExec) {
+    dependsOn 'classes'
+
+    mainClass = project.mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+    workingDir = project.assetsDir
+    standardInput = System.in
+    ignoreExitValue = true
+
+    if (OperatingSystem.current() == MAC_OS)
+        // Required to run on macOS
+        jvmArgs '-XstartOnFirstThread'
+}
+
+tasks.register('debug', JavaExec) {
+    dependsOn 'classes'
+
+    debug = true
+    mainClass = project.mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+    workingDir = project.assetsDir
+    standardInput = System.in
+    ignoreExitValue = true
+}
+
+tasks.register('dist', Jar) {
+    dependsOn 'classes'
+    dependsOn configurations.runtimeClasspath
+
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+eclipse.project.name = "$appName-desktop"
