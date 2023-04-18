@@ -1,6 +1,6 @@
 # Molecules
 
-The Java applications that COULD fry your computer!
+The Java application that COULD fry your computer!
 
 ## Hardware Requirements
 
