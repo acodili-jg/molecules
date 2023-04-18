@@ -1,12 +1,18 @@
-package molecules.client.renderer;
+package io.github.jgacodili.molecules.client.renderer;
 
+import static io.github.jgacodili.molecules.client.renderer.context.FallbackRenderContext.FALLBACK_CONTEXT;
+import static io.github.jgacodili.molecules.util.SelectionMode.NONE;
 import static java.awt.Color.MAGENTA;
 import static java.awt.Color.ORANGE;
 import static java.awt.Color.RED;
 import static java.awt.RenderingHints.KEY_ANTIALIASING;
 import static java.awt.RenderingHints.VALUE_ANTIALIAS_ON;
-import static molecules.client.renderer.context.FallbackRenderContext.FALLBACK_CONTEXT;
-import static molecules.util.SelectionMode.NONE;
+
+import io.github.jgacodili.molecules.client.renderer.context.RenderContext;
+import io.github.jgacodili.molecules.level.Level;
+import io.github.jgacodili.molecules.math.Vec2d;
+import io.github.jgacodili.molecules.molecule.Molecule;
+import io.github.jgacodili.molecules.util.SelectionMode;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -25,12 +31,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.JPanel;
-
-import molecules.client.renderer.context.RenderContext;
-import molecules.level.Level;
-import molecules.math.Vec2d;
-import molecules.molecule.Molecule;
-import molecules.util.SelectionMode;
 
 public class GameRenderer extends JPanel {
 	private static final Color ACCELERATE_COLOR;

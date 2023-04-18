@@ -1,13 +1,13 @@
-package molecules.engine;
+package io.github.jgacodili.molecules.engine;
+
+import io.github.jgacodili.molecules.level.Level;
+import io.github.jgacodili.molecules.math.Vec2d;
+import io.github.jgacodili.molecules.molecule.Molecule;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
-
-import molecules.level.Level;
-import molecules.math.Vec2d;
-import molecules.molecule.Molecule;
 
 public class Engine {
 	public static final double DEFAULT_UPDATE_INTERVAL = 1.0d / 16.0d;

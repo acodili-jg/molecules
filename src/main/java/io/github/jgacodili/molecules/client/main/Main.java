@@ -1,16 +1,16 @@
-package molecules.client.main;
+package io.github.jgacodili.molecules.client.main;
 
 import static java.awt.DisplayMode.REFRESH_RATE_UNKNOWN;
 import static java.awt.Frame.NORMAL;
 
+import io.github.jgacodili.molecules.client.Client;
+import io.github.jgacodili.molecules.client.InputAdapter;
+import io.github.jgacodili.molecules.client.renderer.GameRenderer;
+import io.github.jgacodili.molecules.level.Level;
+
 import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
-
-import molecules.client.Client;
-import molecules.client.InputAdapter;
-import molecules.client.renderer.GameRenderer;
-import molecules.level.Level;
 
 public class Main {
 	private static int getSystemRefreshRate() {

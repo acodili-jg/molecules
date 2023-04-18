@@ -1,5 +1,8 @@
-package molecules.client;
+package io.github.jgacodili.molecules.client;
 
+import static io.github.jgacodili.molecules.util.SelectionMode.ADDITIVE;
+import static io.github.jgacodili.molecules.util.SelectionMode.NONE;
+import static io.github.jgacodili.molecules.util.SelectionMode.SUBTRACTIVE;
 import static java.awt.event.InputEvent.ALT_DOWN_MASK;
 import static java.awt.event.InputEvent.BUTTON1_DOWN_MASK;
 import static java.awt.event.InputEvent.BUTTON3_DOWN_MASK;
@@ -7,9 +10,16 @@ import static java.awt.event.InputEvent.CTRL_DOWN_MASK;
 import static java.awt.event.InputEvent.SHIFT_DOWN_MASK;
 import static java.awt.event.KeyEvent.VK_DELETE;
 import static java.awt.event.KeyEvent.VK_M;
-import static molecules.util.SelectionMode.ADDITIVE;
-import static molecules.util.SelectionMode.NONE;
-import static molecules.util.SelectionMode.SUBTRACTIVE;
+
+import io.github.jgacodili.molecules.client.action.DeleteSelectionAction;
+import io.github.jgacodili.molecules.client.action.StopSelectionAction;
+import io.github.jgacodili.molecules.client.action.ToggleSelectionAccelerationAction;
+import io.github.jgacodili.molecules.client.renderer.GameRenderer;
+import io.github.jgacodili.molecules.engine.EngineExecutor;
+import io.github.jgacodili.molecules.level.Level;
+import io.github.jgacodili.molecules.math.Vec2d;
+import io.github.jgacodili.molecules.molecule.Molecule;
+import io.github.jgacodili.molecules.util.SelectionMode;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -24,16 +34,6 @@ import java.util.Objects;
 import java.util.stream.IntStream;
 
 import javax.swing.KeyStroke;
-
-import molecules.client.action.DeleteSelectionAction;
-import molecules.client.action.StopSelectionAction;
-import molecules.client.action.ToggleSelectionAccelerationAction;
-import molecules.client.renderer.GameRenderer;
-import molecules.engine.EngineExecutor;
-import molecules.level.Level;
-import molecules.math.Vec2d;
-import molecules.molecule.Molecule;
-import molecules.util.SelectionMode;
 
 public class InputAdapter implements MouseListener, MouseMotionListener {
 	private EngineExecutor engineExecutor;

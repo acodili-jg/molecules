@@ -1,4 +1,4 @@
-package molecules.engine;
+package io.github.jgacodili.molecules.engine;
 
 import static java.lang.Thread.MAX_PRIORITY;
 

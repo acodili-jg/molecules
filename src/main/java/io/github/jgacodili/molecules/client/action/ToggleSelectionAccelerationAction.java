@@ -1,11 +1,11 @@
-package molecules.client.action;
+package io.github.jgacodili.molecules.client.action;
+
+import io.github.jgacodili.molecules.client.InputAdapter;
 
 import java.awt.event.ActionEvent;
 import java.io.Serial;
 
 import javax.swing.AbstractAction;
-
-import molecules.client.InputAdapter;
 
 public final class ToggleSelectionAccelerationAction extends AbstractAction {
 	@Serial

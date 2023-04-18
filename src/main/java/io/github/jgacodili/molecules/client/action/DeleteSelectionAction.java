@@ -1,4 +1,4 @@
-package molecules.client.action;
+package io.github.jgacodili.molecules.client.action;
 
 import java.awt.event.ActionEvent;
 import java.io.Serial;

@@ -1,10 +1,10 @@
-package molecules.molecule;
+package io.github.jgacodili.molecules.molecule;
+
+import io.github.jgacodili.molecules.math.Vec2d;
 
 import java.awt.Color;
 import java.awt.Paint;
 import java.util.Objects;
-
-import molecules.math.Vec2d;
 
 public class Molecule {
 	public static final Paint DEFAULT_PAINT = Color.BLACK;

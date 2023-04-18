@@ -1,4 +1,4 @@
-package molecules.util;
+package io.github.jgacodili.molecules.util;
 
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;

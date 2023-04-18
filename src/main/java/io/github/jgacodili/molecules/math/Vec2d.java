@@ -1,4 +1,4 @@
-package molecules.math;
+package io.github.jgacodili.molecules.math;
 
 import java.awt.geom.Point2D;
 import java.util.Objects;

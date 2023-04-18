@@ -1,20 +1,20 @@
-package molecules.client;
+package io.github.jgacodili.molecules.client;
 
 import static java.awt.Font.PLAIN;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
+import io.github.jgacodili.molecules.client.renderer.GameRenderer;
+import io.github.jgacodili.molecules.client.renderer.context.DelegatingRenderContext;
+import io.github.jgacodili.molecules.client.renderer.context.RenderContext;
+import io.github.jgacodili.molecules.engine.Engine;
+import io.github.jgacodili.molecules.engine.EngineExecutor;
+import io.github.jgacodili.molecules.level.Level;
 
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.LayoutManager;
 
 import javax.swing.JFrame;
-
-import molecules.client.renderer.GameRenderer;
-import molecules.client.renderer.context.DelegatingRenderContext;
-import molecules.client.renderer.context.RenderContext;
-import molecules.engine.Engine;
-import molecules.engine.EngineExecutor;
-import molecules.level.Level;
 
 public class Client {
 	public static final Font DEBUG_FONT = new Font("Consolas", PLAIN, 15);
