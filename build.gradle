@@ -15,3 +15,9 @@ java {
 application {
     mainClass = 'io.github.acodili.jg.molecules.client.main.Main'
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+}
