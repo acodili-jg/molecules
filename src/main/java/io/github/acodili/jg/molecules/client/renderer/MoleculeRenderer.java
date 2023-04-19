@@ -20,6 +20,10 @@ public interface MoleculeRenderer {
 
 	Stroke SELECTION_HINT_STROKE = new BasicStroke(5.0f);
 
+    Paint VELOCITY_PAINT = Color.RED;
+
+	Stroke VELOCITY_STROKE = new BasicStroke();
+
     default void renderBase(final Graphics2D graphics, final Molecule molecule) {
         Objects.requireNonNull(graphics, "Parameter graphics is null");
         Objects.requireNonNull(molecule, "Parameter molecule is null");
@@ -47,4 +51,13 @@ public interface MoleculeRenderer {
     }
 
     void renderSelectionHint(Graphics2D graphics, Vec2d position, double radius, SelectionMode selectionMode);
+
+    default void renderVelocity(final Graphics2D graphics, final Molecule molecule) {
+        Objects.requireNonNull(graphics, "Parameter graphics is null");
+        Objects.requireNonNull(molecule, "Parameter molecule is null");
+
+        renderVelocity(graphics, molecule.position, molecule.radius, molecule.velocity);
+    }
+
+    void renderVelocity(Graphics2D graphics, Vec2d position, double radius, final Vec2d velocity);
 }
