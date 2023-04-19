@@ -1,14 +1,14 @@
-package io.github.jgacodili.molecules.client;
+package io.github.acodili.jg.molecules.client;
 
 import static java.awt.Font.PLAIN;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-import io.github.jgacodili.molecules.client.renderer.GameRenderer;
-import io.github.jgacodili.molecules.client.renderer.context.DelegatingRenderContext;
-import io.github.jgacodili.molecules.client.renderer.context.RenderContext;
-import io.github.jgacodili.molecules.engine.Engine;
-import io.github.jgacodili.molecules.engine.EngineExecutor;
-import io.github.jgacodili.molecules.level.Level;
+import io.github.acodili.jg.molecules.client.renderer.GameRenderer;
+import io.github.acodili.jg.molecules.client.renderer.context.DelegatingRenderContext;
+import io.github.acodili.jg.molecules.client.renderer.context.RenderContext;
+import io.github.acodili.jg.molecules.engine.Engine;
+import io.github.acodili.jg.molecules.engine.EngineExecutor;
+import io.github.acodili.jg.molecules.level.Level;
 
 import java.awt.Dimension;
 import java.awt.Font;

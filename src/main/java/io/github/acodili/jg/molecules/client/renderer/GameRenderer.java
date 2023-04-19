@@ -1,18 +1,18 @@
-package io.github.jgacodili.molecules.client.renderer;
+package io.github.acodili.jg.molecules.client.renderer;
 
-import static io.github.jgacodili.molecules.client.renderer.context.FallbackRenderContext.FALLBACK_CONTEXT;
-import static io.github.jgacodili.molecules.util.SelectionMode.NONE;
+import static io.github.acodili.jg.molecules.client.renderer.context.FallbackRenderContext.FALLBACK_CONTEXT;
+import static io.github.acodili.jg.molecules.util.SelectionMode.NONE;
 import static java.awt.Color.MAGENTA;
 import static java.awt.Color.ORANGE;
 import static java.awt.Color.RED;
 import static java.awt.RenderingHints.KEY_ANTIALIASING;
 import static java.awt.RenderingHints.VALUE_ANTIALIAS_ON;
 
-import io.github.jgacodili.molecules.client.renderer.context.RenderContext;
-import io.github.jgacodili.molecules.level.Level;
-import io.github.jgacodili.molecules.math.Vec2d;
-import io.github.jgacodili.molecules.molecule.Molecule;
-import io.github.jgacodili.molecules.util.SelectionMode;
+import io.github.acodili.jg.molecules.client.renderer.context.RenderContext;
+import io.github.acodili.jg.molecules.level.Level;
+import io.github.acodili.jg.molecules.math.Vec2d;
+import io.github.acodili.jg.molecules.molecule.Molecule;
+import io.github.acodili.jg.molecules.util.SelectionMode;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

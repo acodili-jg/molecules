@@ -1,6 +1,6 @@
-package io.github.jgacodili.molecules.molecule;
+package io.github.acodili.jg.molecules.molecule;
 
-import io.github.jgacodili.molecules.math.Vec2d;
+import io.github.acodili.jg.molecules.math.Vec2d;
 
 import java.awt.Color;
 import java.awt.Paint;

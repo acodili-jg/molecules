@@ -2,6 +2,16 @@ plugins {
     id 'application'
 }
 
+java {
+    ext.version = 17
+    sourceCompatibility = version
+    targetCompatibility = version
+
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(version)
+    }
+}
+
 application {
-    mainClass = 'io.github.jgacodili.molecules.client.main.Main'
+    mainClass = 'io.github.acodili.jg.molecules.client.main.Main'
 }

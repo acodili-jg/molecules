@@ -1,6 +1,6 @@
-package io.github.jgacodili.molecules.client.action;
+package io.github.acodili.jg.molecules.client.action;
 
-import io.github.jgacodili.molecules.client.InputAdapter;
+import io.github.acodili.jg.molecules.client.InputAdapter;
 
 import java.awt.event.ActionEvent;
 import java.io.Serial;

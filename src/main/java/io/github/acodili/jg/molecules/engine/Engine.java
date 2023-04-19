@@ -1,8 +1,8 @@
-package io.github.jgacodili.molecules.engine;
+package io.github.acodili.jg.molecules.engine;
 
-import io.github.jgacodili.molecules.level.Level;
-import io.github.jgacodili.molecules.math.Vec2d;
-import io.github.jgacodili.molecules.molecule.Molecule;
+import io.github.acodili.jg.molecules.level.Level;
+import io.github.acodili.jg.molecules.math.Vec2d;
+import io.github.acodili.jg.molecules.molecule.Molecule;
 
 import java.util.HashMap;
 import java.util.Map;
