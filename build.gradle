@@ -13,5 +13,5 @@ java {
 }
 
 application {
-    mainClass = 'io.github.jgacodili.molecules.client.main.Main'
+    mainClass = 'io.github.acodili.jg.molecules.client.main.Main'
 }

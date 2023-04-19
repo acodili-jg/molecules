@@ -1,9 +1,9 @@
-package io.github.jgacodili.molecules.client.renderer.context;
+package io.github.acodili.jg.molecules.client.renderer.context;
 
-import io.github.jgacodili.molecules.client.InputAdapter;
-import io.github.jgacodili.molecules.engine.EngineExecutor;
-import io.github.jgacodili.molecules.level.Level;
-import io.github.jgacodili.molecules.util.SelectionMode;
+import io.github.acodili.jg.molecules.client.InputAdapter;
+import io.github.acodili.jg.molecules.engine.EngineExecutor;
+import io.github.acodili.jg.molecules.level.Level;
+import io.github.acodili.jg.molecules.util.SelectionMode;
 
 import java.awt.geom.Point2D;
 import java.util.Objects;

@@ -1,6 +1,6 @@
-package io.github.jgacodili.molecules.level;
+package io.github.acodili.jg.molecules.level;
 
-import io.github.jgacodili.molecules.molecule.Molecule;
+import io.github.acodili.jg.molecules.molecule.Molecule;
 
 import java.util.concurrent.ConcurrentHashMap;
 

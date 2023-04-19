@@ -1,6 +1,6 @@
-package io.github.jgacodili.molecules.client.action;
+package io.github.acodili.jg.molecules.client.action;
 
-import io.github.jgacodili.molecules.client.InputAdapter;
+import io.github.acodili.jg.molecules.client.InputAdapter;
 
 import java.awt.event.ActionEvent;
 import java.io.Serial;
@@ -8,13 +8,13 @@ import java.util.Set;
 
 import javax.swing.AbstractAction;
 
-public final class StopSelectionAction extends AbstractAction {
+public final class DeleteSelectionAction extends AbstractAction {
 	@Serial
 	private static final long serialVersionUID = 1L;
 
 	private final InputAdapter inputAdapter;
 
-	public StopSelectionAction(final InputAdapter uia) {
+	public DeleteSelectionAction(final InputAdapter uia) {
 		super("Delete Selection");
 
 		this.inputAdapter = uia;
@@ -29,14 +29,11 @@ public final class StopSelectionAction extends AbstractAction {
 
 		final var molecules = level.getMolecules();
 		final var selectedMolecules = this.inputAdapter.getSelectedMolecules();
-		final var stopees = Set.copyOf(selectedMolecules);
+		final var deletees = Set.copyOf(selectedMolecules);
 
-		this.inputAdapter.getEngineExecutor().execute(() -> {
-			for (final var stopee : stopees) {
-				final var molecule = molecules.get(stopee);
+		this.inputAdapter.setModifyingVelocities(false);
 
-				molecule.getVelocity().set(0.0d, 0.0d);
-			}
-		});
+		selectedMolecules.removeAll(deletees);
+		this.inputAdapter.getEngineExecutor().execute(() -> molecules.keySet().removeAll(deletees));
 	}
 }

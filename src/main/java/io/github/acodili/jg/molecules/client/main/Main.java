@@ -1,12 +1,12 @@
-package io.github.jgacodili.molecules.client.main;
+package io.github.acodili.jg.molecules.client.main;
 
 import static java.awt.DisplayMode.REFRESH_RATE_UNKNOWN;
 import static java.awt.Frame.NORMAL;
 
-import io.github.jgacodili.molecules.client.Client;
-import io.github.jgacodili.molecules.client.InputAdapter;
-import io.github.jgacodili.molecules.client.renderer.GameRenderer;
-import io.github.jgacodili.molecules.level.Level;
+import io.github.acodili.jg.molecules.client.Client;
+import io.github.acodili.jg.molecules.client.InputAdapter;
+import io.github.acodili.jg.molecules.client.renderer.GameRenderer;
+import io.github.acodili.jg.molecules.level.Level;
 
 import java.awt.GraphicsEnvironment;
 

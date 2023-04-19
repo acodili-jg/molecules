@@ -1,8 +1,8 @@
-package io.github.jgacodili.molecules.client;
+package io.github.acodili.jg.molecules.client;
 
-import static io.github.jgacodili.molecules.util.SelectionMode.ADDITIVE;
-import static io.github.jgacodili.molecules.util.SelectionMode.NONE;
-import static io.github.jgacodili.molecules.util.SelectionMode.SUBTRACTIVE;
+import static io.github.acodili.jg.molecules.util.SelectionMode.ADDITIVE;
+import static io.github.acodili.jg.molecules.util.SelectionMode.NONE;
+import static io.github.acodili.jg.molecules.util.SelectionMode.SUBTRACTIVE;
 import static java.awt.event.InputEvent.ALT_DOWN_MASK;
 import static java.awt.event.InputEvent.BUTTON1_DOWN_MASK;
 import static java.awt.event.InputEvent.BUTTON3_DOWN_MASK;
@@ -11,15 +11,15 @@ import static java.awt.event.InputEvent.SHIFT_DOWN_MASK;
 import static java.awt.event.KeyEvent.VK_DELETE;
 import static java.awt.event.KeyEvent.VK_M;
 
-import io.github.jgacodili.molecules.client.action.DeleteSelectionAction;
-import io.github.jgacodili.molecules.client.action.StopSelectionAction;
-import io.github.jgacodili.molecules.client.action.ToggleSelectionAccelerationAction;
-import io.github.jgacodili.molecules.client.renderer.GameRenderer;
-import io.github.jgacodili.molecules.engine.EngineExecutor;
-import io.github.jgacodili.molecules.level.Level;
-import io.github.jgacodili.molecules.math.Vec2d;
-import io.github.jgacodili.molecules.molecule.Molecule;
-import io.github.jgacodili.molecules.util.SelectionMode;
+import io.github.acodili.jg.molecules.client.action.DeleteSelectionAction;
+import io.github.acodili.jg.molecules.client.action.StopSelectionAction;
+import io.github.acodili.jg.molecules.client.action.ToggleSelectionAccelerationAction;
+import io.github.acodili.jg.molecules.client.renderer.GameRenderer;
+import io.github.acodili.jg.molecules.engine.EngineExecutor;
+import io.github.acodili.jg.molecules.level.Level;
+import io.github.acodili.jg.molecules.math.Vec2d;
+import io.github.acodili.jg.molecules.molecule.Molecule;
+import io.github.acodili.jg.molecules.util.SelectionMode;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
