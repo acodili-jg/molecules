@@ -2,6 +2,9 @@ plugins {
     id 'application'
 }
 
+version = "$baseVersion-$metaVersion"
+println version
+
 java {
     ext.version = 17
     sourceCompatibility = version
@@ -20,4 +23,16 @@ jar {
     manifest {
         attributes 'Main-Class': application.mainClass
     }
+}
+
+def getMetaVersion() {
+    final def buildNumber = System.env.BUILD_NUMBER
+
+    if (buildNumber)
+        return "build.$it"
+
+    final def instant = Instant.now()
+    final def nanos = instant.with { epochSecond * 1_000_000_000 + nano }
+
+    return "local.${String.format('%016x', nanos).split("(?<=\\G.{4})").join('.')}"
 }
