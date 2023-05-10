@@ -2,7 +2,7 @@ plugins {
     id 'application'
 }
 
-version = "$baseVersion-$metaVersion"
+version = "$baseVersion$metaVersion"
 println version
 
 java {
@@ -26,13 +26,5 @@ jar {
 }
 
 def getMetaVersion() {
-    final def buildNumber = System.env.BUILD_NUMBER
-
-    if (buildNumber)
-        return "build.$it"
-
-    final def instant = Instant.now()
-    final def nanos = instant.with { epochSecond * 1_000_000_000 + nano }
-
-    return "local.${String.format('%016x', nanos).split("(?<=\\G.{4})").join('.')}"
+    return "-build.${System.env.BUILD_NUMBER ?: 'local'}"
 }
