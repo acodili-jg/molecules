@@ -18,9 +18,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@v4
-      with:
-        arguments: build
+      run: .\gradlew build
     - name: Capture build artifacts
       uses: actions/upload-artifact@v4
       with:
