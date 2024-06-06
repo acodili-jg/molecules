@@ -1,11 +1,9 @@
 package io.github.acodili_jg.molecules.level;
 
-import io.github.acodili_jg.molecules.molecule.Molecule;
 import io.github.acodili_jg.molecules.molecule.MoleculeObject;
 import io.github.acodili_jg.molecules.molecule.MoleculeRef;
 import java.util.Objects;
 import java.util.UUID;
-import org.joml.Vector2d;
 import org.joml.Vector2dc;
 
 public class MoleculeImpl extends MoleculeObject {

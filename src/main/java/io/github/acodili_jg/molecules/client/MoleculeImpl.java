@@ -1,12 +1,10 @@
 package io.github.acodili_jg.molecules.client;
 
-import io.github.acodili_jg.molecules.molecule.Molecule;
 import io.github.acodili_jg.molecules.molecule.MoleculeObject;
 import io.github.acodili_jg.molecules.molecule.MoleculeRef;
 import java.awt.Color;
 import java.util.Objects;
 import java.util.UUID;
-import org.joml.Vector2d;
 import org.joml.Vector2dc;
 
 public class MoleculeImpl extends MoleculeObject {
@@ -22,7 +20,7 @@ public class MoleculeImpl extends MoleculeObject {
     public MoleculeImpl() {
         super();
         this.defaultColor = toColor(this.uuid());
-        this.color = color;
+        this.color = defaultColor;
     }
 
     public MoleculeImpl(final MoleculeRef other) {

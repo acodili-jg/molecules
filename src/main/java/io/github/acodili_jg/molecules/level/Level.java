@@ -1,10 +1,7 @@
 package io.github.acodili_jg.molecules.level;
 
 import io.github.acodili_jg.molecules.molecule.MoleculeRef;
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
-import java.util.Collections;
 import java.util.Set;
-import java.util.UUID;
 
 public interface Level {
     void addMolecule(final MoleculeRef molecule);

@@ -2,13 +2,10 @@ package io.github.acodili_jg.molecules.client;
 
 import io.github.acodili_jg.molecules.level.CollisionConsumer;
 import io.github.acodili_jg.molecules.level.Level;
-import io.github.acodili_jg.molecules.molecule.Molecule;
 import io.github.acodili_jg.molecules.molecule.MoleculeRef;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import java.awt.Canvas;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import java.util.UUID;
 import javax.swing.JFrame;
@@ -107,11 +104,11 @@ public class Molecules {
     public void tickPhysics(final double dt) {
         final var time = this.time += dt;
         final var level = this.level;
-        if (this.level == null) {
+        if (level == null) {
             return;
         }
-        while (this.level.hasNextCollisionBefore(time)) {
-            this.level.consumeNextSimultaneousCollisions(this.collisionConsumer);
+        while (level.hasNextCollisionBefore(time)) {
+            level.consumeNextSimultaneousCollisions(this.collisionConsumer);
         }
     }
 

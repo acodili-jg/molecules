@@ -1,6 +1,6 @@
 [versions]
 fastutil = "8.5.12"
-java = "17"
+java = "21"
 joml = "1.10.5"
 
 [libraries]

@@ -1,10 +1,10 @@
 package io.github.acodili_jg.molecules.client;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
-import java.util.Objects;
 import org.joml.Vector2d;
 
 public class Renderer {
@@ -68,7 +68,10 @@ public class Renderer {
 
     private void renderSingle(final Graphics2D graphics, final double time, final MoleculeImpl molecule) {
         this.vec.set(molecule.position());
+        final var line = new Line2D.Double();
         this.vec.fma(time, molecule.velocity());
+        line.x2 = (line.x1 = this.vec.x()) + molecule.velocity().x();
+        line.y2 = (line.y1 = this.vec.y()) + molecule.velocity().y();
         final var radius = molecule.radius();
         this.vec.sub(radius, radius);
         this.ellipse.x = this.vec.x();
@@ -76,5 +79,7 @@ public class Renderer {
         this.ellipse.width = this.ellipse.height = 2 * radius;
         graphics.setColor(molecule.color());
         graphics.fill(this.ellipse);
+        graphics.setColor(Color.BLACK);
+        graphics.draw(line);
     }
 }

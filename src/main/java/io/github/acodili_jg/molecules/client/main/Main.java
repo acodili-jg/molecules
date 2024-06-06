@@ -8,18 +8,18 @@ import java.awt.GraphicsEnvironment;
 import java.util.UUID;
 
 public class Main {
-    private static class MoleculeImpl extends MoleculeObject {
-        public MoleculeImpl() {
-            super();
-        }
-
-        @Override
-        public void setUUID(final UUID uuid) {
-            super.setUUID(uuid);
-        }
-    }
-
     public static void main(final String... args) throws InterruptedException {
+        class MoleculeImpl extends MoleculeObject {
+            public MoleculeImpl() {
+                super();
+            }
+    
+            @Override
+            public void setUUID(final UUID uuid) {
+                super.setUUID(uuid);
+            }
+        }
+    
         final var molecules = new Molecules();
         final var level = new ClientLevel();
         final var molecule = new MoleculeImpl();
