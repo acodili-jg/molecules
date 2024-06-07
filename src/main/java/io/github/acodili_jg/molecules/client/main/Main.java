@@ -25,22 +25,18 @@ public class Main {
         final var molecule = new MoleculeImpl();
         molecules.setLevel(level);
 
-        molecule.setUUID(UUID.randomUUID());
-        molecule.positionMut().set(0.0, 0.0);
-        molecule.velocityMut().set(25.0, 25.0);
-        molecules.addMolecule(molecule);
-
-        molecule.setUUID(UUID.randomUUID());
-        molecule.positionMut().set(0.0, 300.0);
-        molecule.velocityMut().set(25.0, 0.0);
-        molecules.addMolecule(molecule);
-
-        molecule.setUUID(UUID.randomUUID());
-        molecule.positionMut().set(300.0, 0.0);
-        molecule.velocityMut().set(0.0, 25.0);
-        molecules.addMolecule(molecule);
+        for (var u = 1; u < 50; u++) {
+            for (var v = 1; v < 25; v++) {
+                molecule.setUUID(UUID.randomUUID());
+                molecule.setRadius(10);
+                molecule.positionMut().set(15.0 + u * (30.0), 15.0 + v * (30.0));
+                molecule.velocityMut().set(10 * Math.random() - 5, 10 * Math.random() - 5);
+                molecules.addMolecule(molecule);
+            }
+        }
 
         molecules.show();
+        Thread.sleep(1_000);
 
         var lastMs = System.currentTimeMillis();
         final var refreshWaitMs = 1_000 / getDefaultRefreshRate();
