@@ -2,6 +2,7 @@ package io.github.acodili_jg.molecules.client;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
@@ -10,10 +11,12 @@ import org.joml.Vector2d;
 public class Renderer {
     // minimize object allocations by reusing these:
     private final Ellipse2D.Double ellipse;
+    private final Line2D.Double line;
     private final Vector2d vec;
 
     public Renderer() {
         this.ellipse = new Ellipse2D.Double();
+        this.line = new Line2D.Double();
         this.vec = new Vector2d();
     }
 
@@ -61,6 +64,8 @@ public class Renderer {
         final double time,
         final Iterable<? extends MoleculeImpl> molecules
     ) {
+        graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
         for (final var molecule : molecules) {
             this.renderSingle(graphics, time, molecule);
         }
@@ -68,18 +73,28 @@ public class Renderer {
 
     private void renderSingle(final Graphics2D graphics, final double time, final MoleculeImpl molecule) {
         this.vec.set(molecule.position());
-        final var line = new Line2D.Double();
-        this.vec.fma(time, molecule.velocity());
-        line.x2 = (line.x1 = this.vec.x()) + molecule.velocity().x();
-        line.y2 = (line.y1 = this.vec.y()) + molecule.velocity().y();
+
         final var radius = molecule.radius();
-        this.vec.sub(radius, radius);
-        this.ellipse.x = this.vec.x();
-        this.ellipse.y = this.vec.y();
+        // this.ellipse.x = this.vec.x() - radius;
+        // this.ellipse.y = this.vec.y() - radius;
         this.ellipse.width = this.ellipse.height = 2 * radius;
         graphics.setColor(molecule.color());
+        // graphics.draw(this.ellipse);
+
+        // line.x1 = this.vec.x();
+        // line.y1 = this.vec.y();
+        this.vec.fma(time, molecule.velocity());
+        // line.x2 = this.vec.x();
+        // line.y2 = this.vec.y();
+        // graphics.draw(line);
+
+        this.ellipse.x = this.vec.x() - radius;
+        this.ellipse.y = this.vec.y() - radius;
         graphics.fill(this.ellipse);
-        graphics.setColor(Color.BLACK);
-        graphics.draw(line);
+
+        // line.x2 = (line.x1 = this.vec.x()) + molecule.velocity().x();
+        // line.y2 = (line.y1 = this.vec.y()) + molecule.velocity().y();
+        // graphics.setColor(Color.BLACK);
+        // graphics.draw(line);
     }
 }
