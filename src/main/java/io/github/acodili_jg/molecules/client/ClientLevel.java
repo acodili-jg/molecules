@@ -47,10 +47,14 @@ public class ClientLevel implements Level {
     }
 
     @Override
-    public void addMolecule(final MoleculeRef moleculeRef) {
-        final var molecule = new MoleculeImpl(moleculeRef);
-        this.predictsCollisionsContaining(molecule);
+    public void addMovedMolecule(final Molecule molecule) {
+        this.forecast.add(molecule);
         this.molecules.add(molecule);
+    }
+
+    @Override
+    public void addClonedMolecule(final MoleculeRef molecule) {
+        this.addMovedMolecule(new MoleculeImpl(molecule));
     }
 
     @Override

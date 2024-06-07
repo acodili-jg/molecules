@@ -1,10 +1,16 @@
 package io.github.acodili_jg.molecules.level;
 
+import io.github.acodili_jg.molecules.molecule.Molecule;
+import io.github.acodili_jg.molecules.molecule.MoleculeObject;
 import io.github.acodili_jg.molecules.molecule.MoleculeRef;
 import java.util.Set;
 
 public interface Level {
-    void addMolecule(final MoleculeRef molecule);
+    void addMovedMolecule(Molecule molecule);
+
+    default void addClonedMolecule(final MoleculeRef molecule) {
+        this.addMovedMolecule(new MoleculeObject(molecule));
+    }
 
     Set<? extends MoleculeRef> moleculeSet();
 
