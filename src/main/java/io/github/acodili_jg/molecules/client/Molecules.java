@@ -6,6 +6,7 @@ import io.github.acodili_jg.molecules.molecule.MoleculeRef;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
 import java.util.UUID;
 import javax.swing.JFrame;
@@ -40,7 +41,7 @@ public class Molecules {
 
         this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.frame.setSize(DEFUALT_WINDOW_SIZE);
-        // Setting relative to null puts it to the center instead
+        this.frame.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.frame.setLocationRelativeTo(null);
 
         contentPane.add(this.canvas);
@@ -50,7 +51,6 @@ public class Molecules {
 
     private void syncOnCollision(final double time, final UUID uuid, final Vector2dc velocity) {
         final var molecule = this.molecules.get(uuid);
-        // TODO: handle non-existent UUID
 
         // positions aren't actually updated every frame, only on syncs
         molecule.positionMut().fma(time, molecule.velocity());
@@ -82,7 +82,7 @@ public class Molecules {
         }
         if (level != null) {
             for (final var molecule : this.molecules.values()) {
-                level.addMolecule(molecule);
+                level.addMovedMolecule(molecule);
             }
             this.molecules.clear();
             for (final var molecule : level.moleculeSet()) {
@@ -93,16 +93,16 @@ public class Molecules {
 
     public void addMolecule(final MoleculeRef molecule) {
         this.molecules.put(molecule.uuid(), new MoleculeImpl(molecule));
-        this.level.addMolecule(molecule);
+        this.level.addClonedMolecule(molecule);
     }
 
     public void tick(final double dt) {
-        this.tickPhysics(dt);
+        final var time = this.time += dt;
+        this.tickPhysics(time);
         this.render();
     }
 
-    public void tickPhysics(final double dt) {
-        final var time = this.time += dt;
+    public void tickPhysics(final double time) {
         final var level = this.level;
         if (level == null) {
             return;
